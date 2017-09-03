@@ -24,7 +24,7 @@ app.get('/balance/Income', function (req, res) {
 });
 
 app.get('/balance/:accountId', function (req, res) {
-	LedgerService.balance(req.params.accountId);
+	LedgerService.balance(req.params.accountId)
 	.then(function(entries){
 		return entries.filter(function(entry){
 			return entry.total.amount > -1;
